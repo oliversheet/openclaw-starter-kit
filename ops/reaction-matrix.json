@@ -1,0 +1,50 @@
+{
+  "_comment": "Define how agents react to each other's events. This creates emergent multi-agent behavior.",
+  "reactions": [
+    {
+      "id": "content-posted-analyze",
+      "description": "When content agent posts, research agent analyzes engagement after 1 hour",
+      "source": "content-agent",
+      "event": "content_published",
+      "target": "research-agent",
+      "action": "analyze_engagement",
+      "delay_minutes": 60,
+      "probability": 0.5,
+      "cooldown_minutes": 120
+    },
+    {
+      "id": "bug-detected-alert",
+      "description": "When dev agent detects a bug, alert the human immediately",
+      "source": "dev-agent",
+      "event": "bug_detected",
+      "target": "coordinator",
+      "action": "alert_human",
+      "delay_minutes": 0,
+      "probability": 1.0,
+      "cooldown_minutes": 30
+    },
+    {
+      "id": "high-engagement-amplify",
+      "description": "When research agent detects high engagement, content agent drafts followup",
+      "source": "research-agent",
+      "event": "high_engagement_detected",
+      "target": "content-agent",
+      "action": "draft_followup",
+      "delay_minutes": 0,
+      "probability": 0.7,
+      "cooldown_minutes": 240
+    },
+    {
+      "id": "mission-failed-diagnose",
+      "description": "When any mission fails, dev agent diagnoses",
+      "source": "*",
+      "event": "mission_failed",
+      "target": "dev-agent",
+      "action": "diagnose",
+      "delay_minutes": 0,
+      "probability": 1.0,
+      "cooldown_minutes": 60
+    }
+  ],
+  "last_fired": {}
+}
