@@ -118,3 +118,33 @@ Each reaction has:
 - Coordinator should maintain `PROJECT.md`, `PLAN.md`, and `TASKS.md` for active projects.
 - Specialists should write outputs into the project folder whenever work is tied to a specific project.
 
+## Coordinator Project Creation Protocol
+
+The coordinator (`main`) owns project setup.
+
+### When to create a project folder
+Create `projects/<project-slug>/` before delegating when work is:
+- multi-step (spans multiple turns or sessions)
+- multi-agent (research + copy, copy + social, dev + research, etc.)
+- likely to produce reusable deliverables or ongoing decisions
+- tied to a launch, campaign, feature, workflow, or client-facing outcome
+
+### When not to create one
+Skip project setup for:
+- one-off answers
+- quick edits or isolated checks
+- tasks that can be completed in a single turn with no ongoing context
+
+### Required coordinator prep (before delegation)
+1. Create project from `projects/_template/`
+2. Choose a clear kebab-case slug
+3. Fill `PROJECT.md` with goal, deliverable, and success criteria
+4. Seed `PLAN.md` and `TASKS.md` with the first milestones/tasks
+5. Name which agents are involved in `PROJECT.md`
+6. Tell specialists exactly where to write outputs (usually `research/` or `deliverables/`)
+
+### Specialist behavior (default)
+- Specialists should **not** invent a new project folder on their own unless explicitly asked.
+- If a task obviously needs project structure and none exists, escalate to coordinator to create it first.
+- Once the project exists, specialists should work inside that folder and keep updates organized.
+

@@ -102,6 +102,11 @@ Use heartbeats to batch periodic checks (email, calendar, mentions). Keep `HEART
 ## 🔔 Follow-Through Rule
 Whenever you say "I'll keep an eye on it" or "I'll monitor this" — **immediately create a cron job** to actually do it. No empty promises.
 
+## Project Routing (Coordinator Rule)
+
+For multi-step or multi-agent work, `main` should create and initialize `projects/<project-slug>/` from `projects/_template/` before delegating. Specialists should write project-specific outputs into that folder instead of scattering context across agent files or daily memory.
+
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
