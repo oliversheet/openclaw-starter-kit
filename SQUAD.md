@@ -110,3 +110,11 @@ Each reaction has:
 → Coordinator sends task to research agent
 → Research agent crawls competitor sites, checks social, analyzes trends
 → Reports findings in FINDINGS.md
+
+## Project Folder Convention
+
+- Use `projects/<project-slug>/` for project-specific briefs, plans, research, decisions, and deliverables.
+- Keep cross-project reusable knowledge in `shared/` / `intel/`.
+- Coordinator should maintain `PROJECT.md`, `PLAN.md`, and `TASKS.md` for active projects.
+- Specialists should write outputs into the project folder whenever work is tied to a specific project.
+

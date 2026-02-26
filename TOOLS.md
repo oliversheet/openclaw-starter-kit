@@ -33,3 +33,9 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+### Project Docs Layout (Workspace Convention)
+- `projects/<project-slug>/` - project brief, plan, tasks, research, decisions, deliverables
+- Use project folders for project-specific context; keep `shared/` for reusable guidance
+- Add a project folder early when work will span multiple sessions/agents
+
